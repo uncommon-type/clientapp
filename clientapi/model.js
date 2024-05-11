@@ -11,4 +11,17 @@ const pool = new Pool({
     database: process.env.DB_NAME,
 })
 
+export const getUserByLogin = async (login) => {
+    try {
+        const query = 'SELECT "id", "password", "fullName" FROM "user" WHERE "login" = $1';
+        const results = await pool.query(query, [login]);
 
+        if (results.rowCount === 0) {
+            return null;
+        }
+
+        return results.rows[0];
+    } catch (err) {
+        throw new Error(`Failed to getUserByLogin - ${err.message}`);
+    }
+}
