@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 
 import { secretKey } from '../middleware/jwt-validator.js';
 import { getUserByLogin } from '../model.js';
+import { LoginError } from '../config/problem-types.js';
 
 const salt = process.env.SALT;
 
@@ -26,7 +27,7 @@ export const login = async (req, res, next) => {
                 return res.json({ token, userName: user.fullName });
             }
         }
-        throw new Error('Sign in failed')
+        throw new LoginError();
     } catch (err) {
         next(err);
     }

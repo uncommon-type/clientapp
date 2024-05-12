@@ -1,6 +1,8 @@
 import pkg from 'pg';
 const { Pool } = pkg;
 
+import { ServerError } from './config/problem-types.js';
+
 const pool = new Pool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -22,6 +24,6 @@ export const getUserByLogin = async (login) => {
 
         return results.rows[0];
     } catch (err) {
-        throw new Error(`Failed to getUserByLogin - ${err.message}`);
+        throw new ServerError(`Failed to getUserByLogin - ${err.message}`);
     }
 }

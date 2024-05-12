@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 
+import { AuthenticationError } from '../config/problem-types.js';
+
 export const secretKey = process.env.SECRET_KEY;
 
 export const validateJWT = async (req, res, next) => {
@@ -7,14 +9,14 @@ export const validateJWT = async (req, res, next) => {
         const token = req.headers.authorization?.split(' ')[1];
 
         if (!token) {
-            throw new Error('Authentication error');
+            throw new AuthenticationError();
         }
 
         let userId;
 
         jwt.verify(token, secretKey, (err, decoded) => {
             if (err) {
-                throw new Error('Authentication error');
+                throw new AuthenticationError();
             }
 
             userId = decoded.userId
