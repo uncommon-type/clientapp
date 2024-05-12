@@ -27,3 +27,18 @@ export const getUserByLogin = async (login) => {
         throw new ServerError(`Failed to getUserByLogin - ${err.message}`);
     }
 }
+
+export const getClientsByUserId = async (userId) => {
+    try {
+        const query = 'SELECT "id",  "firstName", "middleName","lastName", "status", "accountNumber", "insuranceNumber", "dateOfBirth" FROM "client" WHERE "managerUserId" = $1 ORDER BY "lastName" ASC';
+        const results = await pool.query(query, [userId]);
+
+        if (results.rowCount === 0) {
+            return null;
+        }
+
+        return results.rows;
+    } catch (err) {
+        throw new ServerError(`Failed to fetchData - ${err.message} `);
+    }
+}
