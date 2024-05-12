@@ -16,3 +16,21 @@ export const loginSchema = {
         },
     },
 };
+
+export const clientSchema = {
+    type: 'object',
+    additionalProperties: false,
+    required: ['id', 'status'],
+    minProperties: 2,
+    properties: {
+        id: {
+            type: 'integer',
+            minimum: 1,
+        },
+        status: {
+            type: 'string',
+            enum: ['Не в работе', 'В работе', 'Отказ', 'Сделка закрыта'],
+            default: 'Не в работе',
+        },
+    },
+}
