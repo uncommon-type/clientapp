@@ -1,4 +1,5 @@
-import { getClientsByUserId } from '../model.js';
+import { getClientsByUserId, updateClientStatus } from '../model.js';
+import { NotFoundError } from '../config/problem-types.js';
 
 export const getUserClients = async (req, res, next) => {
     const userId = req.userId;
@@ -18,5 +19,17 @@ export const getUserClients = async (req, res, next) => {
 }
 
 export const updateClient = async (req, res, next) => {
-    res.json({ message: 'ok' });
+    try {
+        const { body: client } = req;
+
+        const update = await updateClientStatus(client);
+
+        if (update === 'fail') {
+            throw new NotFoundError('No record to update', 'client');
+        }
+
+        res.json(update);
+    } catch (err) {
+        next(err);
+    }
 }
