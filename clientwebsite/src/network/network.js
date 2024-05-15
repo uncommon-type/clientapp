@@ -82,3 +82,7 @@ export const sendData = (url, data, token) => {
 export const getData = (url, token) => {
     return callServer('GET', url, {}, token);
 }
+
+export const updateData = async (url, data, token) => {
+    return await callServer('PUT', url, data, token);
+};
