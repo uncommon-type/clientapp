@@ -78,3 +78,7 @@ export const sendData = (url, data, token) => {
 
     return callServer('POST', url, data, token);
 };
+
+export const getData = (url, token) => {
+    return callServer('GET', url, {}, token);
+}
