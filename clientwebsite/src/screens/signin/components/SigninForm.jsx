@@ -1,12 +1,35 @@
+import { Form } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { Input } from '@screens/common/Inputs/Input/Input';
 import { SigninButton } from './SigninButton';
 
-export const SigninForm = () => (
-    <form>
-        <Input label='email' type='email' />
-        <Input label='пароль' type='password' />
-        <div>
-            <SigninButton />
-        </div>
-    </form>
-)
+export const SigninForm = ({ isSigningIn, onChange }) => {
+    return (
+        <Form method='post'>
+            <Input label='email'
+                type='email'
+                autoCapitalize='none'
+                autoCorrect='off'
+                spellCheck='false'
+                readOnly={isSigningIn}
+                onChange={onChange} />
+            <Input label='пароль'
+                type='password'
+                autoCapitalize='none'
+                autoCorrect='off'
+                spellCheck='false'
+                readOnly={isSigningIn}
+                onChange={onChange}
+            />
+            <div>
+                <SigninButton isSigningIn={isSigningIn} />
+            </div>
+        </Form>
+    )
+}
+
+SigninForm.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    isSigningIn: PropTypes.bool.isRequired,
+};
