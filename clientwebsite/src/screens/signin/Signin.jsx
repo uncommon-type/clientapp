@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { redirect, useActionData, useNavigation } from 'react-router-dom';
 
+import { authenticate } from '@helpers/auth';
 import { getUserInput } from '@helpers/form';
 import { isValid } from '@helpers/form';
 import { requestToken } from '@network/network';
@@ -9,6 +10,16 @@ import { links } from '@helpers/constants';
 
 import { SigninForm } from './components/SigninForm.jsx';
 import { Alert } from '@screens/common/Alert/Alert';
+
+export const loader = () => {
+    const authData = authenticate();
+
+    if (!authData) {
+        return null;
+    }
+
+    return redirect(links.clients.list);
+};
 
 export const action = async ({ request }) => {
     const { email: login, пароль: password } = await getUserInput(request);
@@ -57,4 +68,3 @@ export const Signin = () => {
         </main>
     )
 };
-
