@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Error } from '@screens/common/Error/Error';
 import { Signin, loader as signinLoader, action as signinAction } from '@screens/signin/Signin';
 import { action as signoutAction } from '@screens/common/Header/components/Nav';
-import { Clients } from '@screens/clients/Clients';
+import { Clients, loader as clientsLoader } from '@screens/clients/Clients';
 import { NotFound } from '@screens/notFound/NotFound';
 
 const routes = [
@@ -18,6 +18,7 @@ const routes = [
     {
         path: '/clients',
         element: <Clients />,
+        loader: clientsLoader,
         errorElement: <Error />
     },
     {
