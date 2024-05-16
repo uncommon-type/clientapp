@@ -9,12 +9,13 @@ export const NotFound = () => {
     const from = location.state?.from || `${links.login}`;
 
     return (
-        <main>
+        <main className='flow'>
             <h1>404</h1>
-            <div>
+            <div className='flow'>
                 <p>Извините, апрашиваемая вами страница не найдена</p>
                 <Button
                     to={from}
+                    className='with-icon'
                     icon='arrow'
                     label='Вернуться назад'
                     aria-label='Вернуться назад'
