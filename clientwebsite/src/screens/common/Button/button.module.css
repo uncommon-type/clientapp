@@ -1,0 +1,31 @@
+button {
+	border: none;
+	box-shadow: none;
+	background: none;
+	color: currentColor;
+	cursor: pointer;
+}
+
+[class^='button'] {
+	font-weight: var(--font-bold);
+	letter-spacing: .04ch;
+}
+
+.btn-primary {
+	padding: 8px 20px;
+	border: var(--border-width) var(--border-style-solid) var(--primary-glare);
+	background-color: var(--secondary);
+}
+
+.btn-primary:hover {
+	--transition-base: 250ms ease;
+
+	background-color: var(--secondary-dim);
+	transition: transform var(--transition-base);
+}
+
+.btn-lg {
+	--cluster-horizontal-alignment: center;
+  
+	width: 100%;
+}
