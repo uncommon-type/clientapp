@@ -86,6 +86,8 @@ svg {
 }
 
 .decor {
+    position: relative;
+    overflow: hidden;
 	border: var(--border-width) var(--border-style-solid) var(--quaternary-shade);
 	box-shadow: 10px 10px var(--shade-blue),
 		-5px -5px var(--secondary-glare) inset,
@@ -100,4 +102,3 @@ main:focus {
 main:has(table) {
 	margin-top: var(--step-7);
 }
-
