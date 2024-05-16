@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from '@screens/common/Button/Button';
 
 export const SigninButton = ({ isSigningIn }) => {
-    const label = isSigningIn ? 'Выполняется вход...' : 'Вход';
+    const label = isSigningIn ? 'Загрузка...' : 'Вход';
 
     return (
         <Button
