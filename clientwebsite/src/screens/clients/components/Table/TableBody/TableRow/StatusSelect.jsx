@@ -20,7 +20,7 @@ export const StatusSelect = ({ initialStatus = 'Не в работе', id }) => 
     return (
         <fetcher.Form method='put'>
             <input type='hidden' name='id' value={id} />
-            <Select name='status' label='Изменить статус' value={initialStatus} onChange={handleChange} options={OPTIONS} />
+            <Select name='status' label='Изменить статус' id={id} value={initialStatus} onChange={handleChange} options={OPTIONS} />
         </fetcher.Form>
     );
 };
