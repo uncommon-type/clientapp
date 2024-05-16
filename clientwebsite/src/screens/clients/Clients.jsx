@@ -66,19 +66,19 @@ export const Clients = () => {
     return (
         <>
             <Header>
-                <div>
+                <div className='cluster'>
                     <User username={userName} />
                     <Nav />
                 </div>
             </Header>
-            <main>
+            <main className='flow'>
                 {clients.length > 0 ?
                     <>
                         <h1>Клиенты</h1>
                         <ScrollMessage />
                         <Table clients={clients} />
                     </>
-                    : <p>На данный момент записи о Вашиx клиентах отсутствуют</p>
+                    : <p className='gap-top'>На данный момент записи о Вашиx клиентах отсутствуют</p>
                 }
             </main>
         </>
