@@ -1,0 +1,35 @@
+.table-group {
+	overflow-x: auto;
+	border:var(--border-width) var(--border-style-solid) var(--primary-glare);
+	-webkit-overflow-scrolling: touch;
+}
+
+table {
+	--flow-space: 0.2rem;
+  
+	width: 100%;
+	min-width: 30rem;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	text-align: left;
+}
+
+th {
+	padding: 1.5rem;
+	font-size: var(--step-00);
+}
+
+td {
+	padding: 1rem 1.5rem;
+}
+
+td:first-child {
+	font-weight: var(--font-bold);
+}
+
+tr:nth-child(odd) td {
+	background-color: var(--quaternary-glare);
+}

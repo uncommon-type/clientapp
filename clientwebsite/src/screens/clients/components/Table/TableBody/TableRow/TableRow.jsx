@@ -7,7 +7,7 @@ import { StatusSelect } from './StatusSelect';
 export const TableRow = ({ client }) => (
     <tr>
         <td>
-            {`${client.lastName} ${client.firstName}`}
+            {`${client.firstName} ${client.middleName} ${client.lastName}`}
         </td>
         <td>
             <StatusSelect initialStatus={client.status} id={client.id} />
