@@ -10,7 +10,7 @@ export const TableRow = ({ client }) => (
             {`${client.lastName} ${client.firstName}`}
         </td>
         <td>
-            <StatusSelect initialStatus={client.status} />
+            <StatusSelect initialStatus={client.status} id={client.id} />
         </td>
         <td>
             {client.accountNumber}
@@ -29,6 +29,7 @@ TableRow.propTypes = {
         firstName: PropTypes.string.isRequired,
         lastName: PropTypes.string.isRequired,
         status: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
         accountNumber: PropTypes.string.isRequired,
         insuranceNumber: PropTypes.string.isRequired,
         dateOfBirth: PropTypes.string.isRequired,

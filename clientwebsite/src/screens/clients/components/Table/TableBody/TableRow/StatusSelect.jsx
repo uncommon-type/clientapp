@@ -1,3 +1,4 @@
+import { useFetcher } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Select } from '@screens/common/Inputs/Select/Select';
@@ -9,13 +10,22 @@ const OPTIONS = [
     { value: 'Сделка закрыта', label: 'Сделка закрыта' }
 ];
 
-export const StatusSelect = ({ initialStatus = 'Не в работе' }) => (
-    <form>
-        <Select name='status' label='Изменить статус' defaultValue={initialStatus} options={OPTIONS} />
-    </form>
-);
+export const StatusSelect = ({ initialStatus = 'Не в работе', id }) => {
+    const fetcher = useFetcher();
 
+    const handleChange = async (e) => {
+        fetcher.submit(e.target.form, { method: 'PUT' });
+    };
+
+    return (
+        <fetcher.Form method='put'>
+            <input type='hidden' name='id' value={id} />
+            <Select name='status' label='Изменить статус' value={initialStatus} onChange={handleChange} options={OPTIONS} />
+        </fetcher.Form>
+    );
+};
 
 StatusSelect.propTypes = {
     initialStatus: PropTypes.string,
+    id: PropTypes.number.isRequired,
 };
