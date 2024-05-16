@@ -9,6 +9,7 @@ export const SigninButton = ({ isSigningIn }) => {
         <Button
             variant='primary'
             size='lg'
+            className='cluster'
             icon={isSigningIn ? 'spinner' : null}
             label={label}
             aria-label={label}

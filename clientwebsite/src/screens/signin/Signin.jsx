@@ -57,9 +57,9 @@ export const Signin = () => {
     };
 
     return (
-        <main>
-            <section>
-                <div>
+        <main className='flow'>
+            <section className='grid-center'>
+                <div className='flow flow-space-xs'>
                     <h1>Введите свой email и пароль</h1>
                     <SigninForm isSigningIn={isLoading} onChange={handleChange} />
                     {Object.keys(error).length !== 0 ? <Alert message={error.message || 'Нам очень жаль, но что-то пошло не так'} /> : null}

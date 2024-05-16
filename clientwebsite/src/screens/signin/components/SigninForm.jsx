@@ -6,7 +6,7 @@ import { SigninButton } from './SigninButton';
 
 export const SigninForm = ({ isSigningIn, onChange }) => {
     return (
-        <Form method='post'>
+        <Form method='post' className='flow'>
             <Input label='email'
                 type='email'
                 autoCapitalize='none'
@@ -22,7 +22,7 @@ export const SigninForm = ({ isSigningIn, onChange }) => {
                 readOnly={isSigningIn}
                 onChange={onChange}
             />
-            <div>
+            <div className='flow flow-space-l'>
                 <SigninButton isSigningIn={isSigningIn} />
             </div>
         </Form>
