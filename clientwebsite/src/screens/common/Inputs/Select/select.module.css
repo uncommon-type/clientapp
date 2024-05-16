@@ -1,0 +1,9 @@
+select {
+	display: block;
+    border: var(--border-width) var(--border-style-solid) var(--primary-glare);
+	background-color: var(--shade-light);
+	color: var(--primary);
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	font-size: clamp(.88rem, .83rem + .24vw, 1rem); 
+}
+
