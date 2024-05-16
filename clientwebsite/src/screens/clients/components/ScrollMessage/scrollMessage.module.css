@@ -1,0 +1,9 @@
+.scroll-message {
+	display: block;
+}
+
+@media (min-width: 48em) {
+	.scroll-message {
+		display: none;
+	}
+}

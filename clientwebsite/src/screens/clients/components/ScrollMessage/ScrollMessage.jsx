@@ -1,3 +1,5 @@
+import styles from './scrollMessage.module.css';
+
 export const ScrollMessage = () => (
-    <small>(Для полного просмотра таблицы прокрутите страницу вправо)</small>
+    <small className={styles['scroll-message']}>(Для полного просмотра таблицы прокрутите страницу влево)</small>
 )
