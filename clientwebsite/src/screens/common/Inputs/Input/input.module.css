@@ -9,6 +9,12 @@ input {
 	font-size: clamp(.88rem, .83rem + .24vw, 1rem);
 }
 
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  transition: background-color 5000s;
+}
+
 label {
 	display: block;
 	text-transform: uppercase;
