@@ -1,0 +1,15 @@
+header {
+	--cluster-horizontal-alignment: space-between;
+
+	font-size: calc(var(--step-00) * 1.2);
+	font-weight: var(--font-bold);
+}
+
+header a:hover,
+header button:hover {
+	color: var(--shade-blue-bright);
+}
+
+header svg {
+	font-size: var(--step-5);
+}
