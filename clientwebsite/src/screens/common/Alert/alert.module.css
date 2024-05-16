@@ -1,0 +1,30 @@
+.alert {
+	/* --cluster-horizontal-alignment: center; */
+    --with-icon-alignment:flex-start;
+	--gutter: 0.5rem;
+
+	width: 100%;
+	padding: 1rem 1rem;
+	border: var(--border-width) var(--border-style-solid) var(--warn-bright);
+	color: var(--warn-bright);
+	animation: slide-up 350ms ease;
+}
+
+/*.with-icon {--with-icon-alignment}*/
+.alert svg {
+	flex-shrink: 0;
+	font-size: 2em;
+	stroke-width: 2;
+}
+
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(0.4rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
