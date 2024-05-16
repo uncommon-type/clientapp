@@ -1,0 +1,103 @@
+html {
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	padding: var(--step-0);
+	color: var(--primary);
+	background-image: linear-gradient(var(--secondary), var(--secondary)), url(/assets/background.png);
+	background-size: 132px 132px;
+	background-position: 0px 0px, 16px 16px;
+	font-family: var(--font-base);
+	font-size: var(--step-0);
+	line-height: 1.7;
+	text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: var(--font-bold);
+	line-height: 1.1;
+}
+
+h1 {
+	max-width: 15ch;
+    font-size: var(--step-2);
+}
+
+h2,
+h3 {
+	max-width: 20ch;
+}
+
+ul,
+ol {
+	padding-inline-start: 1em;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	color: currentcolor;
+	text-decoration: none;
+}
+
+svg {
+	width: 0.75em;
+	height: 0.75em;
+	stroke: currentColor;
+}
+
+:is(h1, h2, h3) {
+	--flow-space: 1.5em;
+}
+
+[role=list] {
+	padding: 0;
+}
+
+::selection {
+	background: var(--primary);
+	color: var(--tertiary);
+}
+
+:focus {
+	outline: var(--warn-bright) var(--border-style-solid) 2px;
+	outline-offset: .25em;
+}
+
+.app {
+    min-height: 100%;
+}
+
+.app:has(.grid-center) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.decor {
+	border: var(--border-width) var(--border-style-solid) var(--quaternary-shade);
+	box-shadow: 10px 10px var(--shade-blue),
+		-5px -5px var(--secondary-glare) inset,
+		5px 0 var(--secondary-dim) inset;
+    background: var(--tertiary-dim);	
+}
+
+main:focus {
+	outline: none
+}
+
+main:has(table) {
+	margin-top: var(--step-7);
+}
+

@@ -1,0 +1,39 @@
+:root {
+	--primary: #231651;
+	--primary-glare: rgb(35 22 81 /0.7);
+	--primary-dim: rgb(191 135 217/0.4);
+	--secondary: #3b82f680;
+	--secondary-glare: #abddd5;
+	--secondary-dim: rgb(175 249 255/0.4);
+	--tertiary: #f9f8f7;
+	--tertiary-dim: #fff;
+	--quaternary: #000000;
+	--quaternary-shade: rgb(30 41 59 / 0.7);
+	--quaternary-glare: rgb(0 0 0 / .04);
+	--quaternary-dim: rgb(0 0 0/ 0.1);
+	--quaternary-bright: #b4cddd;
+	--warn-bright: #990033;
+	--warn-dim: #fdeff3;
+	--shade-light: transparent;
+	--shade-blue: #8aa0c1;
+	--shade-blue-bright: #396afc;
+
+	--border-width: 0.15rem;
+	--border-style-solid: solid;
+
+	--font-base: atkinson_hyperlegible, Arial, sans-serif;
+	--font-normal: 400;
+	--font-medium: 600;
+	--font-bold: 700;
+
+	--step-00: clamp(0.789375rem, 0.76rem + 0.18vw, 1.125rem);
+	--step-0: clamp(.9575rem, .87rem + .45vw, 1.2rem);
+	--step-1: clamp(1.125rem, .98rem + .69vw, 1.5rem);
+	--step-2: clamp(1.321875rem, 1.11rem + 1.02vw, 1.875rem);
+	--step-3: clamp(1.553125rem, 1.25rem + 1.45vw, 2.34375rem);
+	--step-4: clamp(1.825rem, 1.41rem + 2.03vw, 2.93rem);
+	--step-5: clamp(2.144375rem, 1.57rem + 2.79vw, 3.661875rem);
+	--step-6: clamp(2.519375rem, 1.74rem + 3.79vw, 4.5775rem);
+	--step-7: clamp(2.960625rem, 1.91rem + 5.08vw, 5.721875rem);
+	--gutter: var(--step-0);
+}
