@@ -12,7 +12,7 @@ export const NotFound = () => {
         <main className='flow'>
             <h1>404</h1>
             <div className='flow'>
-                <p>Извините, апрашиваемая вами страница не найдена</p>
+                <p>Извините, запрашиваемая вами страница не найдена</p>
                 <Button
                     to={from}
                     className='with-icon'
