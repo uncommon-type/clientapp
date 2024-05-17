@@ -24,6 +24,11 @@ button {
 	transition: transform var(--transition-base);
 }
 
+.btn-secondary {
+	border: var(--border-width) var(--border-style-solid) var(--primary-glare);
+        background: var(--tertiary-dim);
+}
+
 .btn-lg {
 	--cluster-horizontal-alignment: center;
   
