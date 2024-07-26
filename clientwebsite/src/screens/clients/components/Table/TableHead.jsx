@@ -1,9 +1,9 @@
-const TABLE_HEADERS = ['ФИО', 'Статус', 'Номер счета', 'ИНН', 'Дата рождения'];
+const TABLE_HEADERS = ['Name', 'Status', 'Account number', 'Insurance number', 'Date of birth'];
 
 export const TableHead = () => (
-    <thead>
-        <tr>
-            {TABLE_HEADERS.map(header => <th key={header}>{header}</th>)}
-        </tr>
-    </thead>
-)
+  <thead>
+    <tr>
+      {TABLE_HEADERS.map(header => <th key={header}>{header}</th>)}
+    </tr>
+  </thead>
+);

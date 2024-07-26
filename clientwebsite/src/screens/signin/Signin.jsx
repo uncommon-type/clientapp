@@ -12,59 +12,59 @@ import { SigninForm } from './components/SigninForm.jsx';
 import { Alert } from '@screens/common/Alert/Alert';
 
 export const loader = () => {
-    const authData = authenticate();
+  const authData = authenticate();
 
-    if (!authData) {
-        return null;
-    }
+  if (!authData) {
+    return null;
+  }
 
-    return redirect(links.clients.list);
+  return redirect(links.clients.list);
 };
 
 export const action = async ({ request }) => {
-    const { email: login, пароль: password } = await getUserInput(request);
+  const { email: login, password } = await getUserInput(request);
 
-    if (!isValid({ login, password })) {
-        return { message: 'Неправильная почта или пароль' };
-    }
+  if (!isValid({ login, password })) {
+    return { message: 'Sign in failed' };
+  }
 
-    try {
-        const { token, userName } = await requestToken({ login, password });
+  try {
+    const { token, userName } = await requestToken({ login, password });
 
-        writeToCache({ token, userName });
-        return redirect(links.clients.list);
-    }
+    writeToCache({ token, userName });
+    return redirect(links.clients.list);
+  }
 
-    catch (err) {
-        return { message: 'Неправильная почта или пароль' };
-    }
+  catch (err) {
+    return { message: 'Sign in failed' };
+  }
 };
 
 export const Signin = () => {
-    const actionData = useActionData() || {};
-    const [error, setError] = useState(actionData);
-    const { formData, state } = useNavigation();
-    const isLoading = formData != null && state === 'loading';
+  const actionData = useActionData() || {};
+  const [error, setError] = useState(actionData);
+  const { formData, state } = useNavigation();
+  const isLoading = formData != null && state === 'loading';
 
-    useEffect(() => {
-        if (Object.keys(actionData).length > 0) {
-            setError(actionData);
-        }
-    }, [actionData]);
+  useEffect(() => {
+    if (Object.keys(actionData).length > 0) {
+      setError(actionData);
+    }
+  }, [actionData]);
 
-    const handleChange = () => {
-        setError({});
-    };
+  const handleChange = () => {
+    setError({});
+  };
 
-    return (
-        <main className='flow'>
-            <section className='grid-center'>
-                <div className='flow flow-space-xs'>
-                    <h1>Введите свой email и пароль</h1>
-                    <SigninForm isSigningIn={isLoading} onChange={handleChange} />
-                    {Object.keys(error).length !== 0 ? <Alert message={error.message || 'Нам очень жаль, но что-то пошло не так'} /> : null}
-                </div>
-            </section>
-        </main>
-    )
+  return (
+    <main className='flow'>
+      <section className='grid-center'>
+        <div className='flow flow-space-xs'>
+          <h1>Enter your email and password</h1>
+          <SigninForm isSigningIn={isLoading} onChange={handleChange} />
+          {Object.keys(error).length !== 0 ? <Alert message={error.message || 'Something went wrong'} /> : null}
+        </div>
+      </section>
+    </main>
+  );
 };

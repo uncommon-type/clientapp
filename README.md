@@ -1,48 +1,48 @@
 # Client management app
-Приложение, разработанное с использованием React, Node/Express, Postgres
+Built with React, Node/Express, Postgres
 
-## Инструкция
+## Instructions
 ```bash
-# клонировать проект
+# clone the project:
 git clone https://github.com/uncommon-type/clientapp.git
 
-# перейти в склонированный репозиторий
+# navigate into the cloned repository:
 cd clientapp
 
 ```
 
-### Настройка базы данных
-> **Примечание:** данные инструкции предполагают, что у вас установлены [Docker](https://docs.docker.com/engine/install/) и [Docker Compose](https://docs.docker.com/compose/install/)
+### Setting up database
+> **Note:**  These instructions assume you have [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed
 
 ```bash
-# перейти в директорию clientdb
+# navigate to the clientdb directory:
 cd clientdb
 
-# создать файл .env для использования в разработке со следующей переменной окружения:
+# create a .env file for development use with the following environment variable:
 DB_PWD=<your-db-password>
 
-# запустить Docker контейнер и создать базу данных `clientDB`
+# launch Docker container and create the `clientDB` database:
 docker-compose up
 
-# создать таблицу пользователей, выполнив:
-- скрипт SQL в `clientdb/user/create-user.sql`
-- скрипт SQL в `clientdb/user/insert-user.sql`
+# create the users table by executing:
+- SQL script in `clientdb/user/create-user.sql`
+- SQL script in `clientdb/user/insert-user.sql`
 
-# создать таблицу клиентов, выполнив:
-- скрипт SQL в `clientdb/user/create-client.sql`. 
-- скрипт SQL n `clientdb/user/insert-client.sql`
+# create the clients table by executing:
+- SQL script in `clientdb/user/create-client.sql`. 
+- SQL script in `clientdb/user/insert-client.sql`
 
 ```
 
-### Настройка clientapi
+### Setting up clientapi
 ```bash
-# перейти в директорию clientapi
+# navigate to the clientapi directory:
 cd clientapp
 
-# установить зависимости
+# install dependencies:
 npm i
 
-# создать env.local в корне директории clientapi с следующими переменными окружения:
+# create env.local in the root directory of clientapi with the following environment variables:
 DB_HOST=<your-db-host>
 DB_USER=<your-db-user>
 DB_PWD=<your-db-password>
@@ -51,24 +51,24 @@ SECRET_KEY=<your-secret-key>
 SALT=<your-salt>
 ORIGIN=<your-origin>
 
-# запустить dev сервер
+# start dev server:
 npm run dev
 
 ```
 
-### Настройка clientwebsite
+### Setting up clientwebsite
 
 ```bash
-# перейти в директорию clientwebsite
+# navigate to the clientwebsite directory:
 cd clientwebsite
 
-# установить зависимости
+# install dependencies:
 npm i
 
-# создать env.local в корне директории clientwebsite с следующей переменной окружения:
+# create env.local in the root directory of clientwebsite with the following environment variable:
 VITE_BASE_URL=<your-base-url>
 
-# запустить dev сервер
+# start dev server:
 npm run dev
 
 ```

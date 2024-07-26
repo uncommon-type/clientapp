@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS "client";
-
 CREATE TABLE "client" (
  "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
  "firstName" VARCHAR(85) NOT NULL,
@@ -13,9 +11,6 @@ CREATE TABLE "client" (
  "managerUserId" INTEGER,
  FOREIGN KEY ("managerUserId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
-
 
 
 
