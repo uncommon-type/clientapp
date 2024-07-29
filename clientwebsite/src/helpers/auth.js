@@ -1,37 +1,37 @@
 import { readFromCache, clearCache } from './cache';
 
 const isTokenExpired = (token) => {
-    if (!token) return true;
-    const expiry = JSON.parse(atob(token.split('.')[1])).exp;
-    return Math.floor(new Date().getTime() / 1000) >= expiry;
+  if (!token) return true;
+  const expiry = JSON.parse(atob(token.split('.')[1])).exp;
+  return Math.floor(new Date().getTime() / 1000) >= expiry;
 };
 
 export const isValidAuthData = (authData) => {
-    if (!authData || !authData.token || !authData.userName) {
-        return false;
-    }
+  if (!authData || !authData.token || !authData.userName) {
+    return false;
+  }
 
-    if (isTokenExpired(authData.token)) {
-        return false;
-    }
+  if (isTokenExpired(authData.token)) {
+    return false;
+  }
 
-    return true;
-}
+  return true;
+};
 
 const getAuthDataFromCache = () => {
-    return readFromCache();
-}
+  return readFromCache();
+};
 
 const getAuthData = () => {
-    const authData = getAuthDataFromCache();
+  const authData = getAuthDataFromCache();
 
-    if (!isValidAuthData(authData)) {
-        clearCache();
-        return;
-    }
-    return authData;
+  if (!isValidAuthData(authData)) {
+    clearCache();
+    return;
+  }
+  return authData;
 };
 
 export const authenticate = () => {
-    return getAuthData();
+  return getAuthData();
 };

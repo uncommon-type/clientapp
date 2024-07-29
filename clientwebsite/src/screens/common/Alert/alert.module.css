@@ -1,5 +1,4 @@
 .alert {
-	/* --cluster-horizontal-alignment: center; */
     --with-icon-alignment:flex-start;
 	--gutter: 0.5rem;
 
@@ -10,7 +9,6 @@
 	animation: slide-up 350ms ease;
 }
 
-/*.with-icon {--with-icon-alignment}*/
 .alert svg {
 	flex-shrink: 0;
 	font-size: 2em;

@@ -7,29 +7,29 @@ import { Clients, loader as clientsLoader, action as updateClientStatusAction } 
 import { NotFound } from '@screens/notFound/NotFound';
 
 const routes = [
-    {
-        path: '/',
-        index: true,
-        element: <Signin />,
-        loader: signinLoader,
-        action: signinAction,
-        errorElement: <Error />
-    },
-    {
-        path: '/clients',
-        element: <Clients />,
-        loader: clientsLoader,
-        action: updateClientStatusAction,
-        errorElement: <Error />
-    },
-    {
-        path: '*',
-        element: <NotFound />,
-    },
-    {
-        path: '/signout',
-        action: signoutAction
-    },
+  {
+    path: '/',
+    index: true,
+    element: <Signin />,
+    loader: signinLoader,
+    action: signinAction,
+    errorElement: <Error />,
+  },
+  {
+    path: '/clients',
+    element: <Clients />,
+    loader: clientsLoader,
+    action: updateClientStatusAction,
+    errorElement: <Error />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
+  {
+    path: '/signout',
+    action: signoutAction,
+  },
 ];
 
 export const router = createBrowserRouter(routes);

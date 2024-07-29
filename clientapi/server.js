@@ -8,7 +8,7 @@ import { problemTypes } from './config/problem-types.js';
 import { configureProblemDetailsResponse } from './middleware/problem-details-response.js';
 
 const corsOptions = {
-    origin: process.env.ORIGIN
+  origin: process.env.ORIGIN,
 };
 
 const app = express();
@@ -16,8 +16,8 @@ const port = 3000;
 
 app.use(cors(corsOptions));
 
-const problemDetailsResponseMiddleware =
-    configureProblemDetailsResponse(problemTypes);
+const problemDetailsResponseMiddleware
+    = configureProblemDetailsResponse(problemTypes);
 
 app.use(logger('dev'));
 app.use(express.json());
